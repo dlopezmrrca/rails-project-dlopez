@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_131339) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_151924) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "image_1"
@@ -20,24 +20,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_131339) do
     t.string "father"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "village_id", null: false
-    t.integer "clan_id", null: false
-    t.index ["clan_id"], name: "index_characters_on_clan_id"
-    t.index ["village_id"], name: "index_characters_on_village_id"
   end
 
   create_table "clans", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "characters_id", null: false
+    t.index ["characters_id"], name: "index_clans_on_characters_id"
   end
 
   create_table "villages", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "characters_id", null: false
+    t.index ["characters_id"], name: "index_villages_on_characters_id"
   end
 
-  add_foreign_key "characters", "clans"
-  add_foreign_key "characters", "villages"
+  add_foreign_key "clans", "characters", column: "characters_id"
+  add_foreign_key "villages", "characters", column: "characters_id"
 end

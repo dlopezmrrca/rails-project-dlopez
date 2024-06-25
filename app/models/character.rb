@@ -1,8 +1,7 @@
 class Character < ApplicationRecord
-  belongs_to :village
-  belongs_to :clan
-
-  validates :name, presence: true, uniqueness: true
+  # validations
+  validates :name, presence: true
   validates :image_1, presence: true
+  validates :image_2, presence: true
   validates :birthdate, presence: true
 end
