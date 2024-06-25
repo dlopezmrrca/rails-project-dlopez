@@ -5,13 +5,9 @@ one:
   image_1: MyString
   image_2: MyString
   birthdate: MyString
-  mother: MyString
-  father: MyString
 
 two:
   name: MyString
   image_1: MyString
   image_2: MyString
   birthdate: MyString
-  mother: MyString
-  father: MyString

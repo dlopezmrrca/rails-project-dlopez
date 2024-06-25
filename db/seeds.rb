@@ -1,23 +1,18 @@
-require 'net/http'
+require 'rest-client'
 require 'json'
 
-# Clear database
-Character.delete_all
-Clan.delete_all
-Village.delete_all
 
-# Define URLs
-characters_url = URI('https://dattebayo-api.onrender.com/characters')
 
-# Get JSON data
-characters_response = Net::HTTP.get(characters_url)
-characters = JSON.parse(characters_response)
+(1..72).each do |page|
+  url = "https://dattebayo-api.onrender.com/characters?page=#{page}"
+  characters_seed = JSON.parse(RestClient.get(url))
 
-# Imprimir el nombre del primer personaje y su tipo de dato
-first_character = characters.first
-character_name = first_character['name']
-
-puts "Nombre del primer personaje:"
-puts character_name
-puts "Tipo de dato del nombre:"
-puts character_name.class
+  characters_seed.each do |character|
+    Character.create(
+      name: character["name"],
+      image_1: character["image_1"],
+      image_2: character["image_2"],
+      birthdate: character["birthdate"]
+    )
+  end
+end
