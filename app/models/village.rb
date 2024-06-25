@@ -1,5 +1,7 @@
 class Village < ApplicationRecord
+  # Associations
   has_many :characters
 
-  validates :village_name, presence: true, uniqueness: true
+  # Validations
+  validates :name, presence: true
 end

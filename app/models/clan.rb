@@ -1,5 +1,7 @@
 class Clan < ApplicationRecord
+  # Associations
   has_many :characters
 
-  validates :clan_name, presence: true, uniqueness: true
+  # Validations
+  validates :name, presence: true
 end

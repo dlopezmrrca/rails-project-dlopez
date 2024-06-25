@@ -4,18 +4,14 @@ one:
   name: MyString
   image_1: MyString
   image_2: MyString
-  birthdate: 2024-06-24
-  sex: MyString
-  village: one
-  clan: one
-  family: one
+  birthdate: MyString
+  mother: MyString
+  father: MyString
 
 two:
   name: MyString
   image_1: MyString
   image_2: MyString
-  birthdate: 2024-06-24
-  sex: MyString
-  village: two
-  clan: two
-  family: two
+  birthdate: MyString
+  mother: MyString
+  father: MyString
