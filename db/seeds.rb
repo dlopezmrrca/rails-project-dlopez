@@ -1,5 +1,8 @@
 Character.destroy_all
 Jutsu.destroy_all
+Clan.destroy_all
+CharacterVillage.destroy_all
+CharacterClan.destroy_all
 
 # Seed v 1.0
 (1..72).each do |page|
@@ -44,7 +47,52 @@ Jutsu.destroy_all
   end
 end
 
-# Output count of Character and Jutsu records to verify seeding
+# clans
+url = "https://dattebayo-api.onrender.com/clans"
+clans_seed = JSON.parse(RestClient.get(url))
+
+clans_seed['clans'].each do |clan_data|
+  clan = Clan.create(
+    id: clan_data['id'],
+    name: clan_data['name']
+  )
+
+  clan_data ['characters'].each do |character_id|
+    character = Character.find_by(id: character_id)
+    if character
+      CharacterClan.create(
+        character: character,
+        clan: clan
+      )
+    end
+  end
+end
+
+# villages
+url = "https://dattebayo-api.onrender.com/villages"
+villages_seed = JSON.parse(RestClient.get(url))
+
+villages_seed['villages'].each do |village_data|
+  village = Village.create(
+    id: village_data['id'],
+    name: village_data['name']
+  )
+
+  village_data ['characters'].each do |character_id|
+    character = Character.find_by(id: character_id)
+    if character
+      CharacterVillage.create(
+        character: character,
+        village: village
+      )
+    end
+  end
+end
+
 puts "Total characters seeded: #{Character.count}"
 puts "Total jutsus seeded: #{Jutsu.count}"
+puts "Total clans seeded: #{Clan.count}"
+puts "Total villages seeded: #{Village.count}"
+puts "Total character-clan associations seeded: #{CharacterClan.count}"
+puts "Total character-village associations seeded: #{CharacterVillage.count}"
 puts "Seed operation completed successfully!"
