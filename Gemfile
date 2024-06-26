@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.3.0"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
-
+gem 'will_paginate'
 gem "sprockets-rails"
 gem 'httparty', '~> 0.22.0'
 gem 'faker', '~> 3.4.1'
