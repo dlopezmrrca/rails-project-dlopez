@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "3.3.0"
 
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
+
 gem "sprockets-rails"
 gem 'httparty', '~> 0.22.0'
 gem 'faker', '~> 3.4.1'
@@ -29,3 +30,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 2.6"
