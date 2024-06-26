@@ -1,6 +1,7 @@
 Character.destroy_all
 Jutsu.destroy_all
 
+# Seed v 1.0
 (1..72).each do |page|
   url = "https://dattebayo-api.onrender.com/characters?page=#{page}"
   characters_seed = JSON.parse(RestClient.get(url))
