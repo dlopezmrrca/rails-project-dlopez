@@ -7,12 +7,11 @@
       <h1 class="text-3xl font-bold mb-3"><%= @character.name %></h1>
       <ul>
         <li>Birthdate: <%= @character.birthdate %></li>
-        <li>Jutsus: <%= @character.jutsus.count %></li>
-        <% if @clan.present? %>
-          <li>Clan: <%= @clan.name %></li>
-        <% else %>
-          <li>No Clan Assigned</li>
-        <% end %>
+        <li>Clan:
+          <% @character.clans.each do |clan| %>
+            <%= clan.name %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

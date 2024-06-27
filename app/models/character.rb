@@ -5,7 +5,7 @@ class Character < ApplicationRecord
   # Jutsus
   has_many :jutsus, dependent: :destroy
   # Clans
-  has_many :character_clans
-  has_many :clans, through: :character_clans
+  has_many :character_clans, through: :clans
+  # has_many :clans, through: :character_clans
 
 end

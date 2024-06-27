@@ -15,7 +15,7 @@ class HomeController < ApplicationController
   def show
     @character = Character.find(params[:id])
     @jutsus = @character.jutsus
-    @clan = @character.clans.first
+    @CharacterClan = @clan.name
   end
 
   def search
