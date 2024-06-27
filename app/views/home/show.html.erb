@@ -1,0 +1,19 @@
+<div class='flex items-center justify-center bg-[#0d1829]'>
+  <div class='mx-auto bg-white rounded-3xl shadow-xl max-w-[375px]'>
+    <div class="rounded-t-3xl overflow-hidden">
+      <img src="<%= @character.image_1 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
+    </div>
+    <div class="p-6">
+      <h1 class="text-3xl font-bold mb-3"><%= @character.name %></h1>
+      <ul>
+        <li>Birthdate: <%= @character.birthdate %></li>
+        <li>Jutsus: <%= @character.jutsus.count %></li>
+        <% if @clan.present? %>
+          <li>Clan: <%= @clan.name %></li>
+        <% else %>
+          <li>No Clan Assigned</li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
