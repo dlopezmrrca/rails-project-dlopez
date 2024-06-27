@@ -47,7 +47,8 @@ CharacterClan.destroy_all
 end
 
 # Seed clans
-url = "https://dattebayo-api.onrender.com/clans"
+(1..4).each do |page|
+url = "https://dattebayo-api.onrender.com/clans?page=#{page}"
 clans_seed = JSON.parse(RestClient.get(url))
 
 clans_seed['clans'].each do |clan_data|
@@ -65,6 +66,7 @@ clans_seed['clans'].each do |clan_data|
       )
     end
   end
+end
 end
 
 

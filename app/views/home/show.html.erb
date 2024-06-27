@@ -1,18 +1,36 @@
 <div class='flex items-center justify-center bg-[#0d1829]'>
   <div class='mx-auto bg-white rounded-3xl shadow-xl max-w-[375px]'>
     <div class="rounded-t-3xl overflow-hidden">
+      <% if @character.image_2.nil?%>
       <img src="<%= @character.image_1 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
+      <% else %>
+      <img src="<%= @character.image_2 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
+      <% end %>
     </div>
     <div class="p-6">
       <h1 class="text-3xl font-bold mb-3"><%= @character.name %></h1>
       <ul>
-        <li>Birthdate: <%= @character.birthdate %></li>
-        <li>Clan:
-          <% @character.clans.each do |clan| %>
-            <%= clan.name %>
+        <li><strong>Birthdate:</strong> <%= @character.birthdate.nil? ? 'Unknown' : @character.birthdate %> 🎂</li>
+        <li>
+          <% if @clan_name.present? %>
+            <strong>Clan:</strong> <%= @clan_name %> <a href="https://www.ruby-lang.org" emoji-code="Ruby"><img class="emojidex-emoji w-5 inline" src="https://cdn.emojidex.com/emoji/seal/Ruby.png" emoji-code="Ruby" alt="Ruby" /></a>
+          <% else %>
+            <strong>Clan:</strong> Unknown
           <% end %>
         </li>
+        <li><strong>Jutsus:</strong> <%= @jutsus.count %></li>
+        <li><strong>Jutsus List:</strong></li>
+        <ul>
+          <% @jutsus.each do |jutsu| %>
+            <li><%= jutsu.name %></li>
+          <% end %>
+        </ul>
       </ul>
-    </div>
+      <div class="container mt-6">
+          <%= will_paginate @jutsus %>
+      </div>
+      
+    </ul>
   </div>
+</div>
 </div>

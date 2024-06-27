@@ -15,7 +15,9 @@ class HomeController < ApplicationController
   def show
     @character = Character.find(params[:id])
     @jutsus = @character.jutsus
-    @CharacterClan = @clan.name
+    @clan_name = @character.clans.first.name if @character.clans.any?
+    @jutsus = @character.jutsus.paginate(page: params[:page], per_page: 10)
+
   end
 
   def search
