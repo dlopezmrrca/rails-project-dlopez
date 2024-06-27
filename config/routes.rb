@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get 'home/characters'
   get 'home/characters/:id', to: 'home#show', as: 'home_character'
 
-  get 'home/search', to: 'home#search', as: 'search_characters'
+
+  get 'home/search_characters', to: 'home#search_characters', as: 'search_characters'
+
+
 
 
   get "up" => "rails/health#show", as: :rails_health_check

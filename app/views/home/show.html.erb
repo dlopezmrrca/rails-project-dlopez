@@ -1,10 +1,10 @@
 <div class='flex items-center justify-center bg-[#0d1829]'>
   <div class='mx-auto bg-white rounded-3xl shadow-xl max-w-[375px]'>
     <div class="rounded-t-3xl overflow-hidden">
-      <% if @character.image_2.nil?%>
-      <img src="<%= @character.image_1 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
+      <% if @character.image_2.nil? %>
+        <img src="<%= @character.image_1 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
       <% else %>
-      <img src="<%= @character.image_2 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
+        <img src="<%= @character.image_2 %>" alt="<%= @character.name %>" class="w-full object-cover rounded-t-3xl">
       <% end %>
     </div>
     <div class="p-6">
@@ -12,8 +12,13 @@
       <ul>
         <li><strong>Birthdate:</strong> <%= @character.birthdate.nil? ? 'Unknown' : @character.birthdate %> 🎂</li>
         <li>
-          <% if @clan_name.present? %>
-            <strong>Clan:</strong> <%= @clan_name %> <a href="https://www.ruby-lang.org" emoji-code="Ruby"><img class="emojidex-emoji w-5 inline" src="https://cdn.emojidex.com/emoji/seal/Ruby.png" emoji-code="Ruby" alt="Ruby" /></a>
+          <% if @character.clans.any? %>
+            <strong>Clan(s):</strong>
+            <ul>
+              <% @character.clans.each do |clan| %>
+                <li><%= clan.name %> <a href="https://www.ruby-lang.org" emoji-code="Ruby"><img class="emojidex-emoji w-5 inline" src="https://cdn.emojidex.com/emoji/seal/Ruby.png" emoji-code="Ruby" alt="Ruby" /></a></li>
+              <% end %>
+            </ul>
           <% else %>
             <strong>Clan:</strong> Unknown
           <% end %>
@@ -27,10 +32,8 @@
         </ul>
       </ul>
       <div class="container mt-6">
-          <%= will_paginate @jutsus %>
+        <%= will_paginate @jutsus %>
       </div>
-      
-    </ul>
+    </div>
   </div>
-</div>
 </div>
