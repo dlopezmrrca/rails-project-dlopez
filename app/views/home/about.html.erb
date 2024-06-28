@@ -1,9 +1,11 @@
-  <div class="container bg-white max-w-4xl mx-auto py-8">
+  
+<div class="container max-w-4xl mx-auto">
+  <div class="contaimer bg-white rounded-3xl shadow-xl py-8 px-6">
     <h1 class="text-4xl font-bold mb-4">Rails Project Data Sources</h1>
     <p class="mb-6">The data provided is structured as a comprehensive JSON object representing a character, villages, and clans from the "Naruto" series. The structure includes several nested objects and arrays to organize various attributes and details about the character. Here is a detailed breakdown of the structures:</p>
-
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-2">Characters Data Source</h2>
+      <p class="mb-4"><strong>https://dattebayo-api.onrender.com/characters</strong></p>
       <table class="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>
@@ -117,7 +119,6 @@
         </tbody>
       </table>
     </section>
-
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-2">Which data will be used from characters data source?</h2>
       <p class="mb-4">To create a standard profile for characters I will be using the following data from this data source:</p>
@@ -130,9 +131,9 @@
         <li>Jutsus</li>
       </ul>
     </section>
-
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-2">Clan Data Source</h2>
+      <p class="mb-4"><strong>https://dattebayo-api.onrender.com/clans</strong></p>
       <table class="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>
@@ -156,8 +157,9 @@
         </tbody>
       </table>
     </section>
-
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-2">Which data will be used from clans’ data source?</h2>
       <p>To link the clan from the characters table all attributes from the clan data source will be used.</p>
     </section>
+  </div>
+</div>
