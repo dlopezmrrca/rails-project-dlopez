@@ -1,3 +1,163 @@
-<div class="container bg-w">
-    testing about
-</div>
+  <div class="container bg-white max-w-4xl mx-auto py-8">
+    <h1 class="text-4xl font-bold mb-4">Rails Project Data Sources</h1>
+    <p class="mb-6">The data provided is structured as a comprehensive JSON object representing a character, villages, and clans from the "Naruto" series. The structure includes several nested objects and arrays to organize various attributes and details about the character. Here is a detailed breakdown of the structures:</p>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">Characters Data Source</h2>
+      <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr>
+            <th class="py-2 px-4 border-b">Attribute</th>
+            <th class="py-2 px-4 border-b">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-2 px-4 border-b">id</td>
+            <td class="py-2 px-4 border-b">A unique identifier for the character.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">name</td>
+            <td class="py-2 px-4 border-b">The name of the character.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">images</td>
+            <td class="py-2 px-4 border-b">An array of URLs pointing to images of the character.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">debut</td>
+            <td class="py-2 px-4 border-b">
+              An object containing details of the character's first appearance in different media:
+              <ul class="list-disc pl-6">
+                <li>manga: The first manga appearance.</li>
+                <li>anime: The first anime appearance.</li>
+                <li>novel: The first novel appearance.</li>
+                <li>movie: The first movie appearance.</li>
+                <li>game: The first game appearance.</li>
+                <li>ova: The first OVA (original video animation) appearance.</li>
+                <li>appearsIn: A list of media types the character appears in.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">family</td>
+            <td class="py-2 px-4 border-b">
+              An object detailing the character's family relationships:
+              <ul class="list-disc pl-6">
+                <li>father: Name of the father.</li>
+                <li>mother: Name of the mother.</li>
+                <li>son: Name of the son.</li>
+                <li>daughter: Name of the daughter.</li>
+                <li>wife: Name of the wife.</li>
+                <li>adoptive son: Name of the adoptive son.</li>
+                <li>godfather: Name of the godfather.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">jutsu</td>
+            <td class="py-2 px-4 border-b">An array of jutsu (special abilities or techniques) the character can perform.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">natureType</td>
+            <td class="py-2 px-4 border-b">An array listing the types of elemental chakra the character can use.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">personal</td>
+            <td class="py-2 px-4 border-b">
+              An object containing personal details about the character:
+              <ul class="list-disc pl-6">
+                <li>birthdate: The character's birth date.</li>
+                <li>sex: The character's gender.</li>
+                <li>age: An object detailing the character's age at different parts of the series:
+                  <ul class="list-disc pl-6">
+                    <li>Part I: Age during Part I.</li>
+                    <li>Part II: Age during Part II.</li>
+                    <li>Academy Graduate: Age at graduation from the Academy.</li>
+                  </ul>
+                </li>
+                <li>height: An object detailing the character's height at different parts of the series.</li>
+                <li>weight: An object detailing the character's weight at different parts of the series.</li>
+                <li>bloodType: The character's blood type.</li>
+                <li>kekkeiGenkai: An array of the character's unique bloodline abilities.</li>
+                <li>classification: An array listing the character's classifications.</li>
+                <li>tailedBeast: The tailed beasts associated with the character.</li>
+                <li>occupation: An array of the character's occupations.</li>
+                <li>affiliation: An array listing the character's affiliations.</li>
+                <li>team: An array of the teams the character has been part of.</li>
+                <li>clan: The name of the character's clan.</li>
+                <li>titles: An array of titles and aliases associated with the character.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">rank</td>
+            <td class="py-2 px-4 border-b">
+              An object containing the character's ninja rank information:
+              <ul class="list-disc pl-6">
+                <li>ninjaRank: An object detailing the character's rank at different parts of the series.</li>
+                <li>ninjaRegistration: The character's ninja registration number.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">tools</td>
+            <td class="py-2 px-4 border-b">An array of tools and weapons the character uses.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">voiceActors</td>
+            <td class="py-2 px-4 border-b">
+              An object containing information about the voice actors for the character:
+              <ul class="list-disc pl-6">
+                <li>japanese: An array of Japanese voice actors.</li>
+                <li>english: An array of English voice actors.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">Which data will be used from characters data source?</h2>
+      <p class="mb-4">To create a standard profile for characters I will be using the following data from this data source:</p>
+      <ul class="list-disc pl-6">
+        <li>Id</li>
+        <li>Name</li>
+        <li>Image_1</li>
+        <li>Image_2</li>
+        <li>Birthdate</li>
+        <li>Jutsus</li>
+      </ul>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">Clan Data Source</h2>
+      <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr>
+            <th class="py-2 px-4 border-b">Attribute</th>
+            <th class="py-2 px-4 border-b">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-2 px-4 border-b">id</td>
+            <td class="py-2 px-4 border-b">A unique identifier for the clan.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">name</td>
+            <td class="py-2 px-4 border-b">The name of the clan.</td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4 border-b">characters</td>
+            <td class="py-2 px-4 border-b">An array of character IDs.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">Which data will be used from clans’ data source?</h2>
+      <p>To link the clan from the characters table all attributes from the clan data source will be used.</p>
+    </section>
