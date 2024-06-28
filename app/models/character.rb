@@ -1,5 +1,6 @@
 class Character < ApplicationRecord
   validates :name, presence: true
+  validates :id, uniqueness: true
 
   # Associations
   # Jutsus
