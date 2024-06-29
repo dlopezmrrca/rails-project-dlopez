@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @characters = Character.paginate(page: params[:page], per_page: 10)
+    @clans = Clan.all
   end
 
   def about
@@ -22,6 +23,15 @@ class HomeController < ApplicationController
     render 'search'
   end
 
+  def clans
+    @clans = Clan.all
+  end
+
+  def clan_characters
+    @clan = Clan.find(params[:id])
+    @characters = @clan.characters.paginate(page: params[:page], per_page: 10)
+  end
+
   private
 
   def filtered_characters
@@ -32,4 +42,6 @@ class HomeController < ApplicationController
 
     characters.distinct
   end
+
+
 end
