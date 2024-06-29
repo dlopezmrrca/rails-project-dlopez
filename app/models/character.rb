@@ -1,6 +1,7 @@
 class Character < ApplicationRecord
   validates :name, presence: true
   validates :id, uniqueness: true
+  validates :name, confirmation: { case_sensitive: false }
 
   # Associations
   # Jutsus

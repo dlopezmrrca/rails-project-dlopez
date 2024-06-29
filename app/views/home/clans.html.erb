@@ -8,20 +8,30 @@
             <h1 class="mb-2 text-[1.75rem] font-semibold text-dark">All Clans</h1>
             <span class="text-[1.15rem] font-medium text-muted">Meet all clans in one place to get started.</span>
           </div>
-          <div class="flex flex-wrap w-full">
-            <% @clans.each do |clan| %>
-              <div class="flex flex-col mr-5 text-center mb-11 lg:mr-16">
-                <div class="text-center">
-                  <h2 class="text-dark font-semibold hover:text-primary text-[1.25rem] transition-colors duration-200 ease-in-out"><%= clan.name %></h2>
-                  <%# Button %>
-                  <div class="container">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Clan Name
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <% @clans.each do |clan| %>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <h2 class="text-dark font-semibold hover:text-primary text-[1.25rem] transition-colors duration-200 ease-in-out"><%= clan.name %></h2>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
                     <%= link_to "Show Characters", clan_characters_path(clan), class: 'relative inline-flex text-sm sm:text-base rounded-full font-medium border-2 border-transparent transition-colors outline-transparent focus:outline-transparent disabled:opacity-50 disabled:pointer-events-none disabled:opacity-40 disabled:hover:opacity-40 disabled:cursor-not-allowed disabled:shadow-none text-white bg-[#4040F2] hover:bg-[#3333D1] focus:border-[#B3B3FD] focus:bg-[#4040F2] px-4 py-1 sm:py-1.5 sm:px-5' %>
-                  </div>
-                  <%# End button %>
-                </div>
-              </div>
-            <% end %>
-          </div>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
