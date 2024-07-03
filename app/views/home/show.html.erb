@@ -13,7 +13,7 @@
         <li><strong>Birthdate:</strong> <%= @character.birthdate.nil? ? 'Unknown' : @character.birthdate %> 🎂</li>
         <li>
           <% if @clan_name.present? %>
-            <strong>Clan:</strong> <%= @clan_name %> <a href="https://www.ruby-lang.org" emoji-code="Ruby"><img class="emojidex-emoji w-5 inline" src="https://cdn.emojidex.com/emoji/seal/Ruby.png" emoji-code="Ruby" alt="Ruby" /></a>
+            <strong>Clan:</strong> <%= @clan_name %> </a>
           <% else %>
             <strong>Clan:</strong> Unknown
           <% end %>
