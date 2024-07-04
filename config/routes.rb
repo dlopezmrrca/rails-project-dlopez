@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   root 'home#index'
 
@@ -9,5 +11,7 @@ Rails.application.routes.draw do
   get 'clans/:id/characters', to: 'home#clan_characters', as: 'clan_characters'
   get 'home/search_characters', to: 'home#search_characters', as: 'search_characters'
   get "up" => "rails/health#show", as: :rails_health_check
+
+
 
 end
