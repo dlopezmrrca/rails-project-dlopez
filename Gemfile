@@ -32,3 +32,7 @@ group :test do
 end
 
 gem "tailwindcss-rails"
+gem 'activeadmin'
+gem 'devise'
+gem 'sassc-rails'
+gem 'kaminari', '~> 1.2.1'
